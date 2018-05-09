@@ -1,0 +1,15 @@
+<h1>Candidatos</h1>
+<hr>
+<div class="card-columns">
+  <div class="card text-white bg-dark p-3" *ngFor="let candidate of candidates; let i=index" style="max-width: 18rem;">
+    <div class="card-header">{{candidate.party | uppercase}}</div>
+    <div class="card-body">
+      <h5 class="card-title">{{candidate.name}} {{candidate.age}}</h5>
+      <p class="card-text">{{candidate.biography}}</p>
+      <button (click)="poll(candidate.name, candidate.party)" type="button" class="btn btn-outline-primary btn-block">Votar</button>
+    </div>
+    <div class="card-footer">
+      <p>Votos   <small class="text-muted">{{candidate.polls}}</small></p>
+    </div>
+  </div>
+</div>
